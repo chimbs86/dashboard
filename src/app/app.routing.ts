@@ -9,6 +9,7 @@ import { MapsComponent }   from './maps/maps.component';
 import { NotificationsComponent }   from './notifications/notifications.component';
 import { UpgradeComponent }   from './upgrade/upgrade.component';
 import {ChimbsCollective} from './chimbscollective/dashboard.component';
+import {AddPackage} from './addpackage/user.component';
 
 export const AppRoutes: Routes = [
     {
@@ -22,30 +23,34 @@ export const AppRoutes: Routes = [
     },
     {
         path: 'user',
-        component: UserComponent
+        component: AddPackage
     },
     {
-        path: 'table',
-        component: TableComponent
+        path: 'user?',
+        component: AddPackage
     },
-    {
-        path: 'typography',
-        component: TypographyComponent
-    },
-    {
-        path: 'icons',
-        component: IconsComponent
-    },
-    {
-        path: 'maps',
-        component: MapsComponent
-    },
-    {
-        path: 'notifications',
-        component: NotificationsComponent
-    },
-    {
-        path: 'upgrade',
-        component: UpgradeComponent
-    }
+    // {
+    //     path: 'table',
+    //     component: TableComponent
+    // },
+    // {
+    //     path: 'typography',
+    //     component: TypographyComponent
+    // },
+    // {
+    //     path: 'icons',
+    //     component: IconsComponent
+    // },
+    // {
+    //     path: 'maps',
+    //     component: MapsComponent
+    // },
+    // {
+    //     path: 'notifications',
+    //     component: NotificationsComponent
+    // },
+    // {
+    //     path: 'upgrade',
+    //     component: UpgradeComponent
+    // }
 ]

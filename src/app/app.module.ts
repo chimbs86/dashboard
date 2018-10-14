@@ -21,6 +21,8 @@ import {UpgradeComponent} from './upgrade/upgrade.component';
 import {ChimbsCollective} from './chimbscollective/dashboard.component';
 import {NgDragDropModule} from 'ng-drag-drop';
 import {NgDragDropService} from 'ng-drag-drop/src/services/ng-drag-drop.service';
+import {AddPackage} from './addpackage/user.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -33,7 +35,7 @@ import {NgDragDropService} from 'ng-drag-drop/src/services/ng-drag-drop.service'
         MapsComponent,
         NotificationsComponent,
         UpgradeComponent,
-        ChimbsCollective
+        ChimbsCollective, AddPackage
     ],
     imports: [
         BrowserModule,
@@ -43,6 +45,7 @@ import {NgDragDropService} from 'ng-drag-drop/src/services/ng-drag-drop.service'
         FooterModule,
         FixedPluginModule,
         NgDragDropModule.forRoot(),
+        FormsModule,
         NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'})
 
     ],

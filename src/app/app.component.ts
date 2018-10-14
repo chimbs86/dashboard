@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Package} from './Package';
 
 declare var $:any;
 
@@ -8,4 +9,7 @@ declare var $:any;
   styleUrls: ['./app.component.css', '../../node_modules/ng-drag-drop/style.css']
 })
 
-export class AppComponent{}
+export class AppComponent {
+
+
+}

@@ -17,19 +17,16 @@
                         <p>Stats</p>
                     </a>
                 </li>
-                <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <li class="dropdown" >
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
                             <i class="ti-bell"></i>
-                            <p class="notification">5</p>
+                            <p class="notification" >{{notifications.length}}</p>
                             <p>Notifications</p>
                             <b class="caret"></b>
                       </a>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">Notification 1</a></li>
-                        <li><a href="#">Notification 2</a></li>
-                        <li><a href="#">Notification 3</a></li>
-                        <li><a href="#">Notification 4</a></li>
-                        <li><a href="#">Another notification</a></li>
+                      <ul class="dropdown-menu" >
+                          <li *ngFor="let notification of notifications"><a href="#">{{notification.name}} </a></li>
+                              <li (click)="clear()"><a (click)="clear()">clear</a> </li>
                       </ul>
                 </li>
                 <li>

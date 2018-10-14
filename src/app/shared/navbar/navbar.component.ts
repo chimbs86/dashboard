@@ -2,6 +2,7 @@ import { Component, OnInit, Renderer, ViewChild, ElementRef } from '@angular/cor
 import { ROUTES } from '../../sidebar/sidebar.component';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import {Notification} from '../Notification';
 
 @Component({
     moduleId: module.id,
@@ -10,14 +11,16 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 })
 
 export class NavbarComponent implements OnInit{
+    static notifications: Notification[] =[{name:'gs'}];
     private listTitles: any[];
     location: Location;
     private nativeElement: Node;
     private toggleButton;
+
     private sidebarVisible: boolean;
+    notifications = NavbarComponent.notifications;
 
     @ViewChild("navbar-cmp") button;
-
     constructor(location:Location, private renderer : Renderer, private element : ElementRef) {
         this.location = location;
         this.nativeElement = element.nativeElement;
@@ -54,5 +57,10 @@ export class NavbarComponent implements OnInit{
             this.sidebarVisible = false;
             body.classList.remove('nav-open');
         }
+    }
+
+    clear() {
+        NavbarComponent.notifications = [];
+        this.notifications = [];
     }
 }
