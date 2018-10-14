@@ -1,6 +1,7 @@
+
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-3 col-sm-6" *ngFor="let component of components" draggable="true">
+            <div class="col-lg-3 col-sm-6" *ngFor="let component of components" [dragData]="component" draggable="true"  [dragScope]="'drink'" >
                 <div class="card">
                     <div class="content">
 
@@ -45,10 +46,15 @@
 
 
 
-                    <div class="content" droppable="true">
 
 
-                        <div *ngFor="let component of activeComponents" class="card col-lg-3 col-sm-6" >
+
+
+
+                        <div class="content" droppable="true" [dropScope]="'drink'" (onDrop) = 'onDropEvent($event)'>
+
+
+                            <div *ngFor="let component of activeComponents" class="card col-lg-3 col-sm-6" >
                             <div class="content">
 
                                 <div class="row">
@@ -65,23 +71,30 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
 
+                                        <i class="ti-reload"></i> $ {{component.price}}
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-
-
+                        <div class="row">
+                        </div>
                         <div class="footer">
                             <div class="chart-legend">
-                                <i class="fa fa-circle text-info"></i> Open
+                                <i class="fa fa-circle text-info"></i> All prices are in dollars
                                 <i class="fa fa-circle text-danger"></i> Click
                                 <i class="fa fa-circle text-warning"></i> Click Second Time
                             </div>
                             <hr>
                             <div class="stats">
-                                <i class="ti-reload"></i> Updated 3 minutes ago
+                                <i class="ti-reload"></i> {{updated}}
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
