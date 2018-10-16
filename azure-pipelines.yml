@@ -16,5 +16,5 @@ steps:
     npm install -g @angular/cli
     npm install
     npm install experimental
-    ng build --prod
+    ng build --prod --experimental-modules
   displayName: 'npm install and build'
