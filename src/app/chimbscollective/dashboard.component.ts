@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {Package} from '../Package';
-import {AppComponent} from '../app.component';
 
 declare var $: any;
 
@@ -28,11 +27,18 @@ export class ChimbsCollective implements OnInit {
     static activeComponents: Package[] = [];
     components = ChimbsCollective.components;
     activeComponents = ChimbsCollective.activeComponents;
+
     ngOnInit() {
     }
 
     onDropEvent(e: any) {
         ChimbsCollective.activeComponents.push(e.dragData);
+    }
+
+    onDragExit(e: any) {
+        console.log("exite");
+        console.log("exite");
+        ChimbsCollective.activeComponents.splice(ChimbsCollective.activeComponents.indexOf(e.dragData));
     }
 
     total() {

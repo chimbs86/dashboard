@@ -51,7 +51,7 @@
 
 
 
-                        <div class="content" droppable="true" [dropScope]="'drink'" (onDrop) = 'onDropEvent($event)'>
+                        <div class="content" draggable="true" droppable="true" [dropScope]="'drink'" (onDrop) = 'onDropEvent($event)' (onDragLeave)="onDragExit($event)">
 
 
                             <div *ngFor="let component of activeComponents" class="card col-lg-3 col-sm-6" >
