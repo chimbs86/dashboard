@@ -1,15 +1,7 @@
-import { Routes } from '@angular/router';
-
-import { DashboardComponent }   from './dashboard/dashboard.component';
-import { UserComponent }   from './user/user.component';
-import { TableComponent }   from './table/table.component';
-import { TypographyComponent }   from './typography/typography.component';
-import { IconsComponent }   from './icons/icons.component';
-import { MapsComponent }   from './maps/maps.component';
-import { NotificationsComponent }   from './notifications/notifications.component';
-import { UpgradeComponent }   from './upgrade/upgrade.component';
+import {Routes} from '@angular/router';
 import {ChimbsCollective} from './chimbscollective/dashboard.component';
 import {AddPackage} from './addpackage/user.component';
+import {TableComponent} from "./table/table.component";
 
 export const AppRoutes: Routes = [
     {
@@ -22,6 +14,10 @@ export const AppRoutes: Routes = [
         component: ChimbsCollective
     },
     {
+        path: 'dashboard/',
+        component: ChimbsCollective
+    },
+    {
         path: 'user',
         component: AddPackage
     },
@@ -29,10 +25,10 @@ export const AppRoutes: Routes = [
         path: 'user?',
         component: AddPackage
     },
-    // {
-    //     path: 'table',
-    //     component: TableComponent
-    // },
+    {
+        path: 'table',
+        component: TableComponent
+    },
     // {
     //     path: 'typography',
     //     component: TypographyComponent
