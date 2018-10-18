@@ -12,7 +12,12 @@
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label>Company</label>
-                                        <input type="text" class="form-control border-input" disabled placeholder="Company" value="Chimbs Collective">
+                                        <!--<input type="text" class="form-control border-input" disabled placeholder="Company" value="Chimbs Collective">-->
+                                        <select [(ngModel)]="selectedRole"
+                                                id="selectedRole" (change)="onChange()" class="form-control border-input" >
+                                            <option *ngFor="let role of rolesAvailable" [value]="role">{{role}}</option>
+
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -43,7 +48,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Cost $</label>
-                                        <input type="number" class="form-control border-input" [(ngModel)]="cost" placeholder="Home Address" value="Melbourne, Australia">
+                                        <input type="number" [disabled]="disabled" class="form-control border-input" [(ngModel)]="cost" placeholder="Home Address" value="Melbourne, Australia">
                                     </div>
                                 </div>
                             </div>
